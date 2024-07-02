@@ -1,0 +1,1656 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <style>
+        .hidden-content {
+            display: none;
+        }
+        </style>
+        <title> Ishwar || Portfolio </title>
+
+        <!-- box icons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+        <!-- custom css  
+        <link rel="stylesheet" href="css/style.css">
+-->
+        <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    /* border: none; */
+    /* outline: none; */
+    scroll-behavior: smooth;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+:root {
+    --bg-color: #1f242d;
+    --hover-color: #12f7ff;
+    --second-bg-color: #323946;
+    --big-font: 2.5rem;
+    --normal-font: 2rem;
+    --neon-box-shadow: 0 0 .5rem #12f7ff;
+    --h2-font: 3rem;
+    --text-color: #f5f5f5;
+    --font-neon-text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+    0 0 20px rgba(18, 247, 255, 0.3),
+    0 0 30px rgba(18, 247, 255, 0.3),
+    0 0 40px rgba(18, 247, 255, 0.3),
+    0 0 70px rgba(18, 247, 255, 0.3),
+    0 0 80px rgba(18, 247, 255, 0.3),
+    0 0 100px rgba(18, 247, 255, 0.3),
+    0 0 150px rgba(18, 247, 255, 0.3);
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--second-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hover-color);
+    border-radius: 5rem;
+}
+
+
+
+body {
+    -font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    /* background: rgba(255, 255, 255, 0.075); */
+    border-bottom: 1px solid transparent;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 5%;
+}
+
+header.sticky {
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--second-bg-color);
+    padding: 5px 5%;
+}
+
+.logo {
+    margin-top: 1.6%;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+span {
+    color: var(--hover-color);
+}
+
+.navlist{
+    margin-top: .7%;
+    display: flex;
+}
+.navlist a {
+    display: inline-block;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 10px 20px;
+    animation: slideAnimation 1s ease forwards;
+    animation-delay: calc(.5s * var(--i));
+    opacity: 0;
+}
+.navlist a:hover {
+    color: var(--hover-color);
+    text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+    0 0 20px rgba(18, 247, 255, 0.3),
+    0 0 30px rgba(18, 247, 255, 0.3),
+    0 0 40px rgba(18, 247, 255, 0.3),
+    0 0 70px rgba(18, 247, 255, 0.3),
+    0 0 80px rgba(18, 247, 255, 0.3),
+    0 0 100px rgba(18, 247, 255, 0.3),
+    0 0 150px rgba(18, 247, 255, 0.3);
+}
+
+.navlist a.active {
+    color: var(--hover-color);
+}
+
+#menu-icon {
+    font-size: 1.8rem;
+    z-index: 1000;
+    cursor: pointer;
+    margin-left: 25px;
+    background: var(--hover-color);
+    border-radius: 3px;
+    color: var(--second-bg-color);
+    display: none;
+}
+
+section {
+    padding: 100px 10%;
+}
+
+.home {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    grid-gap: 4em;
+}
+.home-content {
+    max-width: 600px;
+}
+.home-content h1 {
+    font-size: var(--big-font);
+    font-weight: 700;
+}
+.home-content p {
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+
+.change-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.change-text h3 {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+}
+.change-text h3 .word{
+    position: absolute;
+    display: flex;
+    opacity: 0;
+}
+.change-text h3 .word .letter {
+    transform-origin: center center 25px;
+}
+.change-text h3 .word .letter.out {
+    transform: rotateX(90deg);
+    transition: 0.32s cubic-beziar(0.6,0,0,7,0.2);
+}
+.change-text h3 .word .letter.in {
+    transition: 0.38s ease;
+}
+.change-text h3 .word .letter.behind {
+    transform: rotateX(-90deg);
+}
+
+.info-box {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 1rem 0 2rem;
+}
+.info-box h5 {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+.info-box span{
+    font-size: .9rem;
+    color: #bdbdbd;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    height: 45px;
+}
+.btn-box .btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: var(--hover-color);
+    color: rgb(49, 59, 58);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: .6s;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 5px;
+    position: relative;overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--hover-color);
+}
+.btn:hover {
+    color: black;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--hover-color);
+    width: 20;
+    height: 100%;
+    z-index: -1;
+    transition: .7s;
+}
+.btn:hover::before {
+    width: 100%;
+    background-color: rgb(115, 194, 247);
+}
+.btn:nth-child(2){
+    background: var(--bg-color);
+    color: var(--hover-color);
+}
+.btn:nth-child(2):hover {
+    color: var(--bg-color);
+}
+.btn:nth-child(2)::before{
+    background: rgb(115, 194, 247);
+}
+
+.social-media {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height: 40px;
+}
+.social-media a {
+    display: inline-flex;
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: var(--hover-color);
+    color: var(--hover-color);
+    border: 2px solid var(--hover-color);
+    transition: .6s;
+    box-shadow: 0 0 0.4rem #12f7ff;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.social-media a i{
+    font-size: 1.5rem;
+}
+.social-media a:hover {
+    color: rgb(43, 43, 90);
+    background: #12f7ff;
+}
+.social-media a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    transition: .6s;
+    z-index: -1;
+}
+.social-media a:hover::before {
+    width: 100%;
+    background: #5cdeff;
+}
+
+.home-image {
+    position: relative;
+}
+.img-box{
+    text-align: center;
+}
+.img-box img {
+    margin-bottom: 10%;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+}
+
+.liquid-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 1%;
+}
+.liquid-shape:nth-child(2){
+    filter: blur(50px)
+}
+
+/* ABout Section CSS */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2em;
+    background: var(--second-bg-color);
+}
+
+.about .img-about {
+    left: -5%;
+    text-align: center;
+    position: relative;
+}
+.about .img-about img {
+    max-width: 350px;
+    height: auto;
+}
+
+.about-content h2{
+    color: var(--hover-color);
+    font-weight: 700;
+    font-size: var(--normal-font);
+    margin-bottom: 2.7rem;
+}
+
+.about-content p{
+    align-items: center;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+.info-about1,
+.info-about2,
+.info-about3 {
+    background: var(--bg-color);
+    font-size: .8rem;
+    position: absolute;
+    padding: 10px;
+    width: 90px;
+    border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    display: block;
+    box-shadow: var(--neon-box-shadow);
+    border: 1px solid var(--hover-color);
+    outline: 2px solid var(--bg-color);
+    z-index: 100;
+    animation: morph 6s linear infinite;
+}
+.info-about1 {
+    left: -19%;
+    top: 43%;
+}
+.info-about2 {
+    left: 60%;
+    top: 15%;
+}
+.info-about3 {
+    left: 61%;
+    top: 90%;
+}
+.info-about span{
+    color: var(--hover-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+ Certificate Section  
+.main-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--hover-color);
+}
+.main-text h2 {
+    font-weight: 700;
+    font-size: var(--normal-font);
+}
+.main-text span {
+    color: #fdfdfd;
+    font-size: .8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-certificate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+}
+.section-certificate .certificate-box {
+    flex: 1 1 18rem;
+    padding: 2rem 1rem 2rem;
+    text-align: center;
+    background: var(--second-bg-color);
+    transition: transform .4s;
+    border-radius: 10px;
+}
+.cert-btn {
+    width: auto;
+    justify-content: center;
+}
+.certificate-box:hover {
+    transform: translateY(-.4rem);
+}
+.certificate-icon {
+    border: 2px solid var(--hover-color);
+    padding: 1rem; /* Adjust the padding to make the circle smaller from sides */
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally and vertically */
+    font-size: 2rem; /* Adjust the font size */
+    width: 4rem; /* Adjust the width to make the circle smaller from sides */
+    height: 4rem; /* Set the desired height */
+    border-radius: 50%;
+    position: relative;
+    color: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+    outline: 3px solid var(--bg-color);
+    margin: 0 auto; /* Center the container horizontally */
+}
+.certificate-box h3{
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+.certificate-box p {
+    margin: .5rem 0 1.5rem 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #bdbdbd;
+    line-height: 1.6;
+} 
+
+/* Skills Section  */
+.skills {
+    background: var(--second-bg-color);
+}
+.skills .main-text h2 {
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    /* margin-left:4%;
+    margin-top: 1%; */
+}
+.skills .main-text span {
+    justify-content: center;
+    align-items: center;
+    margin-left: 7%;
+    font-size: 30px;
+}
+.skill-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
+}
+.skill-bar {
+    margin: 2.3rem;
+}
+.skill-main h3{
+    margin-bottom: 2rem;
+    font-size: var(--normal-font);
+    text-align: center;
+}
+.skill-left .skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.skill-left .skill-bar .bar {
+    height: 10px;
+    background-color: rgb(41, 39, 39);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+.skill-bar .bar span{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: var(--hover-color);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shadow);
+}
+.skill-bar .bar .python {
+    width: 90%;
+    animation: HTML 5s;
+}
+.skill-bar .bar .networking {
+    width: 85%;
+    animation:CSS 5s;
+}
+.skill-bar .bar .linux {
+    width: 75%;
+    animation: JavaScript 5s;
+}
+.skill-bar .bar .dataStructures {
+    width: 85%;
+    animation: BootStrap 5s;
+}
+.skill-bar .bar .java {
+    width: 70%;
+    animation: java 5s;
+}
+.skill-bar .bar .sQL {
+    width: 83%;
+    animation: sQL 5s;
+}
+
+.professional {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.box {
+    position: relative;
+    margin: 10px 0;
+    margin-left: 15%;
+    flex: 1 1 15rem;
+}
+.box .text {
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+.box .text big {
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.box .text small{
+    display: block;
+    font-weight: 600;
+}
+.circle {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid #fff; */
+}
+
+.circle .points {
+    width: 5px;
+    height: 10px;
+    position: absolute;
+    background: var(--bg-color);
+    border-radius: 3px;
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+}
+
+.points.marked {
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
+}
+
+/* pORTFOLIO css  
+.portfolio .main-text h2 {
+    font-size: 30px;
+    margin-left: 6%;
+    margin-top: 1%; 
+}
+
+.portfolio .main-text span {
+    justify-content: center;
+    align-items: center;
+    margin-left: 8%; 
+    font-size: 30px;
+}
+.portfolio .main-text h1 {
+    justify-content: center;
+    align-items: center;
+     margin-left: 8%; 
+    font-size: 30px;
+}
+
+.filter-buttons {
+    justify-content: center;
+    /* margin: 2rem; */
+    /* margin-left: 4.2rem; 
+    text-align: center;
+}
+.filter-buttons .button{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .4px;
+    margin-left: 2.3rem;
+    margin-top: .8rem;
+    margin-bottom: 4%;
+    color: var(--text-color);
+}
+
+.filter-buttons .button:hover{
+    color: var(--hover-color);
+}
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap:2rem;
+}
+
+.port-box {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #292e33;
+    display: flex;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    border: 2px solid var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+}
+
+.port-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.port-image img {
+    width: 100%;
+    opacity: .5s;
+    height: 100%;
+    transition: .5s;
+}
+
+.port-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: linear-gradient(rgba(0,0,0,.2), #12f7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.5s;
+    padding: 0 2rem;
+}
+.port-box:hover .port-content{
+    opacity: 1;
+}
+.port-box:hover .port-image img{
+    transform: scale(1.1);
+}
+.port-content h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.port-content p{
+    font-size: .8rem;
+    margin: 5px 0 15px 0;
+}
+.port-content a{
+    background: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--hover-color);
+    outline: 2px solid #fff;
+}
+.port-content a i{
+    font-size: 1.3rem;
+    color: var(--second-bg-color);
+}*/
+
+/* Contact Section CSS */
+.contact{
+    background: var(--second-bg-color);
+    width: 100%;
+}
+.contact .main-text h2 {
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    /* margin-left: 4%; */
+    /* margin-top: 1%; */
+}
+.contact .main-text span {
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 8%; */
+    font-size: 30px;
+}
+
+.contact form{
+    text-align: center;
+    max-width: 50rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+}
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin-bottom: .8rem;
+    border: none;
+    border-radius: 5px;
+    padding: .7rem;
+}
+
+.contact form textarea {
+    resize: none;
+}
+.formBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.formBtn .btn {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Footer css */
+.footer {
+    padding: 1.5rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer p{
+    color: #bdbdbd;
+    font-size: 1.3rem;
+}
+.footer a{
+    display: inline-flex;
+    justify-content: center;
+    color: var(--text-color);
+    background: var(--hover-color);
+    padding: .6rem;
+    border-radius: 5px;
+}
+.footer a i{
+    font-size: 1.4rem;
+    color: var(--second-bg-color);
+}
+
+/* Parallax */
+.scroll-scale{
+    opacity: 0;
+    transform: scale(.9);
+    transition: all 2s;
+}
+.scroll-bottom{
+    opacity: 0;
+    transform: translateY(300px);
+    transition: 3s;
+}
+.scroll-top {
+    opacity: 0;
+    transform: translateY(-300px);
+    transition: 3s;
+}
+.show-items {
+    opacity: 1;
+    transform: translate(0);
+}
+
+
+/* KeyFrames  */
+@keyframes morph {
+    0%,
+    100%{
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    30%{
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    60%{
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+    80%{
+        border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    }
+}
+
+@keyframes python {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+@keyframes networking {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 85%;
+    }
+}
+@keyframes linux {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 97%;
+    }
+}
+@keyframes dataStructures {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 85%;
+    }
+}
+@keyframes java {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 70%;
+    }
+}
+@keyframes sQL {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 83%;
+    }
+}
+
+@keyframes glow {
+    0%{
+        background: var(--bg-color);
+        box-shadow: none;
+    }
+    100%{
+        background: var(--hover-color);
+        box-shadow: var(--neon-box-shadow);
+    }
+}
+
+@keyframes slideAnimation {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Break Points  */
+@media (max-width:991px){
+    header,
+    header.sticky{
+        padding: 15px 5%;
+    }
+    footer{
+        padding: 15px 5%;
+    }
+    section{
+        padding: 50px 5%;
+    }
+    .navlist a{
+        padding: 8px 15px;
+    }
+    :root{
+        --big-font: 2.2rem;
+        --normal-font: 1.8rem;
+        --neon-box-shadow: 0 0 .5rem #12f7ff;
+        --h2-font: 3rem;
+    }
+    .home-content {
+        margin-top: 5rem;
+    }
+    .social-media {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    #menu-icon {
+        display: block;
+        transform: all .4s ease;
+    }
+    #menu-icon.bx-x{
+        transform: rotate(-180deg);
+    }
+    .navlist {
+        display: flex;
+        position: absolute;
+        top:-1000px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        padding: 0 5%;
+        transition: all .45s ease;
+    }
+    .navlist a{
+        display: block;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .navlist.open{
+        top: 100%;
+    }
+    .home{
+        grid-template-columns: 1fr;
+    }
+    .home-image{
+        margin-bottom: 5rem;
+    }
+    .liquid-shape{
+        width: 80%;
+        left: 10%;
+        top: 13%;
+    }
+    .about {
+        flex-direction: column-reverse;
+    }
+    .skill-main {
+        grid-template-columns: 1fr;
+    }
+    .filter-buttons{
+        margin: 2.5rem 0;
+    }
+    footer p{
+        font-size: .8rem;
+    }
+}
+
+@media (max-width:420px){
+    #menu-icon {
+        display: block;
+        transform: all .4s ease;
+    }
+    #menu-icon.bx-x{
+        transform: rotate(-180deg);
+    }
+    html{
+        font-size: 80%;
+    }
+    footer p {
+        font-size: .6rem;
+    }
+    .filter-buttons .btn{
+        font-size: .8rem;
+    }
+    .img-about img {
+        width: 300px;
+    }
+    .info-about1,.info-about2,.info-about3 {
+        display: none;
+    }
+    .img-about p {
+        font-size: 1rem;
+    }
+}
+/* Your existing styles */
+@media (max-width:373px){
+    .portfolio .main-text span {
+        font-size: 25px;
+    }
+    .portfolio .main-text h2 {
+        font-size: 20px;
+    }
+}
+@media (max-width:371px){
+    .contact .main-text span {
+        font-size: 25px;
+    }
+}
+@media (max-width:318px){
+    .portfolio .main-text span {
+        font-size: 22px;
+    }
+    .contact .main-text span {
+        font-size: 22px;
+    }
+}
+@media (max-width:286px){
+    .portfolio .main-text span {
+        font-size: 18px;
+    }
+    .contact .main-text span {
+        font-size: 18px;
+    }
+}
+/* Set styles for screens with a width between 300px and 412px */
+
+
+/* Default styles for larger screens */
+
+/* Media query for screens up to 556px width */
+
+/* Add more media queries for smaller screens if needed */
+
+/* Your other styles */
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo"><span>&nbsp;&nbsp;My </span>Portfolio</div>
+            <ul class="navlist">
+                <li><a href="#home" style="--i:1;">Home</a></li>
+                <li><a href="#about" style="--i:2;">About</a></li>
+                <li><a href="#certificate" style="--i:3;">project</a></li>
+                <li><a href="#skills" style="--i:4;">Skills</a></li>
+            <!--    <li><a href="#portfolio" style="--i:5;">Portfolio</a></li>-->
+                <li><a href="#contact" style="--i:6;">Contact</a></li>
+            </ul>
+            <div id="menu-icon" class="bx bx-menu"></div>
+        </header>
+
+<!-- Home Section Design  -->
+        <section class="home" id="home">
+            <div class="home-content scroll-scale">
+                <h1>Hi! I'm Ishwar</h1>
+                <div class="change-text">
+                    <h3>And I'm</h3>
+                    <h3>
+                        <span class="word">web Devloper&nbsp;</span>
+                       
+                    </h3>
+                </div>
+                <p>
+                    I am a passionate Web Developer with a strong foundation in creating dynamic and
+                    responsive web applications.With expertise in HTML, CSS, JavaScript,java,sql,spring,springBoot.My experience includes developing user-friendly
+                    websites and applications, optimizing performance, and ensuring cross-browser
+                    compatibility
+                    I am always ready to take on new challenges 
+                    and continuously learn in this ever-evolving field.
+                </p>
+                <div class="info-box">
+                    <div class="email-info">
+                        <h5>Email : </h5>
+                        <span>ishwarsharma27092002@gmail.com</span>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    
+                    <a href="#contact" class="btn">Hire Me</a>
+                </div>
+              <div class="social-media">
+                    <a href="" target="_blank"><i class='bx bxl-meta'></i></a>
+                    <a href="#ishwar_0000" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/Ishwar78" target="_blank"><i class='bx bx-home'></i></a>
+                </div>                
+                </div>
+                <div class="home-image scroll-top">
+                    <div class="img-box">
+                        <img src="image200.jpg" alt="">
+                    </div>
+                    <div class="liquid-shape">
+                        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                            <path fill="#12f7ff">
+                            <animate attributeName="d"
+                                dur="15000ms"
+                                repeatCount="indefinite"
+                                values="M387.5,309Q368,368,309,406Q250,444,179.5,417.5Q109,391,60.5,320.5Q12,250,63.5,182.5Q115,115,182.5,
+                                59Q250,3,306.5,70Q363,137,385,193.5Q407,250,387.5,309Z;
+                                
+                                M419.5,327Q404,404,327,407Q250,410,163.5,416.5Q77,423,48.5,336.5Q20,250,52,167Q84,84,167,86Q250,
+                                88,309,110Q368,132,401.5,191Q435,250,419.5,327Z;
+                                
+                                M416,312Q374,374,312,404.5Q250,435,175,417.5Q100,400,86,325Q72,250,87.5,176.5Q103,103,
+                                176.5,66Q250,29,327.5,62Q405,95,431.5,172.5Q458,250,416,312Z;
+
+                                M414.8918,328.06895Q406.1379,406.1379,328.06895,444.39533Q250,482.65275,184.41973,431.90665Q118.83946,
+                                381.16054,91.54102,315.58027Q64.24258,250,74.20156,167.08027Q84.16054,84.16054,167.08027,
+                                54.91796Q250,25.67539,307.55234,80.28536Q365.10467,134.89533,394.37518,192.44766Q423.64569,250,414.8918,328.06895Z;
+
+                                M398,316.5Q383,383,316.5,398.5Q250,414,172.5,409.5Q95,405,48.5,327.5Q2,250,55.5,179.5Q109,109,179.5,86.5Q250,
+                                64,332.5,74.5Q415,85,414,167.5Q413,250,398,316.5Z;
+
+                                M406,306Q362,362,306,409Q250,456,162.5,440.5Q75,425,39.5,337.5Q4,250,41.5,164.5Q79,79,164.5,88Q250,97,333,
+                                90.5Q416,84,433,167Q450,250,406,306Z;
+
+                                M440.75821,321.84565Q393.6913,393.6913,321.84565,419.223Q250,444.7547,167.10035,430.277Q84.2007,415.7993,51.25645,
+                                332.89965Q18.3122,250,53.25645,169.10035Q88.2007,88.2007,169.10035,48.13029Q250,8.05989,311.02055,
+                                68.0094Q372.04109,127.95891,429.9331,188.97945Q487.82511,250,440.75821,321.84565Z;
+
+                                M405.5,328Q406,406,328,416Q250,426,193,395Q136,364,73.5,307Q11,250,72.5,192Q134,134,192,114Q250,94,
+                                319.5,102.5Q389,111,397,180.5Q405,250,405.5,328Z;
+
+                                M387.5,309Q368,368,309,406Q250,444,179.5,417.5Q109,391,60.5,320.5Q12,250,63.5,182.5Q115,115,182.5,
+                                59Q250,3,306.5,70Q363,137,385,193.5Q407,250,387.5,309Z;
+                                ">
+                            </animate>
+                        </path>
+                          </svg>
+                    </div>
+                </div>
+        </section>
+
+        <!-- About Section Design -->
+        <section class="about" id="about">
+            <div class="img-about scroll-scale">
+                <img src="img/img_3.png" alt="">
+                <div class="info-about1">
+                 <!-- <span></span>
+                    <p></p>
+                </div>
+                <div class="info-about2">
+                    <span></span>
+                    <p></p>
+                </div>
+                <div class="info-about3">
+                    <span></span>
+                    <p></p>
+                </div>-->
+            </div>
+            <div class="about-content scroll-scale">
+                <h2>ABOUT ME</h2>
+                <p>Greetings! I'm Ishwar, a passionate web developer learner with a keen interest in the intersection of web devlopment and data science. 
+                    My journey is defined by a relentless pursuit of knowledge and a commitment to mastering the ever-evolving landscape of web devlopment.
+                    Driven by a fascination for the world of web devlopment, I immerse myself in hands-on experiences across platforms like devlop application . 
+                    Through these endeavors, I continually refine my skills in identifying and exploiting vulnerabilities, ensuring a dynamic and up-to-date skill set.
+                    </p>
+                    <div class="hidden-content">
+                       <p> 
+                    </p>
+
+                    </div>
+                <div class="btn-box">
+            <a href="#about" class="btn" onclick="toggleContent()">Read More</a>
+        </div>
+            </div>
+        </section>
+
+        
+        <section class="certificate" id="certificate">
+            <div class="main-text scroll-scale">
+                <span>PROJECTS  </span>
+                <h2></h2>
+            </div>
+            <div class="section-certificate scroll-bottom">
+                <div class="certificate-box">
+                     <i class='bx bxs-certification'></i> 
+                    <i class='bx bxl-google certificate-icon' ></i>
+                    <h3>Microsoft Application web page </h3>
+                    <p>It seems like
+                        referring to a Microsoft website Home page project called
+                        "Microsoft-" hosted on GitHub. Based on the technologies
+                        listed (HTML, CSS, Bootstrap, and JavaScript), it sounds like
+                        this project involves creating a website that allows users to
+                        interact with Microsoft content.</p>
+                    <div class="btn-box cert-btn">
+                        <a href="https://github.com/Ishwar78/Microsoft-clone-" target="_blank" class="btn">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="certificate-box">
+                    <i class='bx bxs-skull certificate-icon'></i>
+                    <h3>Myntra Web Application Home Page </h3>
+                    <p>It seems like referring
+                        to a Myntra website Home page project called "Myntra-" hosted on GitHub. Based on the technologies listed (HTML, CSS, Bootstrap, and JavaScript), it sounds like this project
+                        involves creating a website that allows users to interact with
+                        Myntra content.</p>
+                    <div class="btn-box cert-btn">
+                         <a href="https://github.com/Ishwar78/Myntra-clone-" target="_blank" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="certificate-box">
+                    <i class='bx bxs-certification certificate-icon'></i>
+                    <h3> Music web Application page like spotify </h3>
+                    <p>It seems like referring to a
+                        music website project called "Music-" hosted on GitHub. Based on the technologies listed (HTML, CSS, Bootstrap, and
+                        JavaScript), it sounds like this project involves creating a
+                        website that allows users to interact with music content.</p>
+                    <div class="btn-box cert-btn">
+                        <a href="https://github.com/Ishwar78/music-" target="_blank" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="certificate-box">
+                    <i class='bx bxs-certification certificate-icon'></i>
+                    <h3> Amazon Application home page </h3>
+                    <p>It seems like referring to a
+                       Amazon website project called "Amazonc-" hosted on GitHub. Based on the technologies listed (HTML, CSS, Bootstrap, and
+                        JavaScript), it sounds like this project involves creating a
+                        website that allows users to interact with Amazon web page  content.</p>
+                    <div class="btn-box cert-btn">
+                        <a href="https://github.com/Ishwar78/AMAZON-CLONE" target="_blank" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="certificate-box">
+                    <i class='bx bxs-certification certificate-icon'></i>
+                    <h3>japan-culture-lifestyle web page   </h3>
+                    <p>It seems like referring to a
+                        japan culture  project called "japan culture " hosted on GitHub. Based on the technologies listed (HTML, CSS, Bootstrap, and
+                        JavaScript), it sounds like this project involves creating a
+                        website that allows users to interact with japan culture content.</p>
+                    <div class="btn-box cert-btn">
+                        <a href="https://github.com/Ishwar78/japan-culture-lifestyle" target="_blank" class="btn">Read More</a>
+                    </div>
+                </div>
+              
+        </section>
+
+        <!-- Skills Section Design  -->
+        <section id="skills" class="skills">
+            <div class="main-text scroll-scale">
+                <!-- <h1><span>Technical and Professional</span></h1> -->
+                <h2>MY Skills </h2>
+            </div>
+            <div class="skill-main">
+                <div class="skill-left scroll-scale">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-bar">
+                        <div class="info">
+                            <p>HTML</p>
+                            <p>90%</p>
+                        </div>
+                        <div class="bar">
+                            <span class="python"</span>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="info">
+                            <p>CSS</p>
+                            <p>85%</p>
+                        </div>
+                        <div class="bar">
+                            <span class="networking"</span>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="info">
+                            <p>JavaScript</p>
+                            <p>75%</p>
+                        </div>
+                        <div class="bar">
+                            <span class="linux"</span>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="info">
+                            <p>BootStrap</p>
+                            <p>85%</p>
+                        </div>
+                        <div class="bar">
+                            <span class="dataStructures"</span>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="info">
+                            <p>Java</p>
+                            <p>70%</p>
+                        </div>
+                        <div class="bar">
+                            <span class="java"</span>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="info">
+                            <p>SQL</p>
+                            <p>76%</p>
+                        </div>
+                        <div class="bar">
+                            <span class="sQL"</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-right scroll-scale">
+                    <h3>Professional Skills</h3>
+                    <div class="professional">
+                        <div class="box">
+                        <div class="circle" data-dots="80" data-percent="91"></div>
+                        <div class="text">
+                            <big>91%</big>
+                            <small>Team Work</small>
+                        </div>
+                    </div>
+                        <div class="box">
+                            <div class="circle" data-dots="80" data-percent="84"></div>
+                        <div class="text">
+                            <big>84%</big>
+                            <small>Critical Thinking</small>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent="80"></div>
+                        <div class="text">
+                            <big>80%</big>
+                            <small>Analytical Skills</small>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent="95"></div>
+                        <div class="text">
+                            <big>95%</big>
+                            <small>Management</small>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent="80"></div>
+                        <div class="text">
+                            <big>80%</big>
+                            <small>Problem Solving</small>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent=90></div>
+                        <div class="text">
+                            <big>70%</big>
+                            <small>Communication</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section Design  -->
+     <!--   <section id="portfolio" class="portfolio">
+            <div class="main-text scroll-scale">
+                <h1><span>What Have I Done ?</span></h1>
+                <h2>MY PROJECTS </h2>
+            </div>
+            <div class="container">
+                <div class="filter-buttons scroll-scale">
+                    <button class="button" data-filter=".apps">Apps</button>
+                    <button class="button" data-filter=".tools">Tools</button>
+                    <button class="button" data-filter=".others">Others</button>
+                    <button class="button" data-filter="all">All</button>
+                </div>
+
+                <div class="portfolio-gallery scroll-bottom">
+                    <div class="port-box mix apps">
+                        <div class="port-image">
+                            <img src="assets/image/1.jfif" alt="">
+                        </div>
+                        <div class="port-content">
+                            <h3>Secure Chat Application</h3>
+                            <p>A well secure chat applications to share secret data between trusted parties.
+                                It uses advanced encryption algorithms to transfer data and most importantly bydefault it doesn't save
+                                the chats so as to provide 100% privacy. 
+                            </p>
+                            <a href="#"><i class='bx bx-link-external' ></i></a>
+                        </div>
+                    </div>
+                    <div class="port-box mix apps">
+                        <div class="port-image">
+                            <img src="assets/image/2.jfif" alt="">
+                        </div>
+                        <div class="port-content">
+                            <h3>Password Generator Tool</h3>
+                            <p>Lazy to think of new passwords? This password generator tool lets you create a very secured password
+                                based on your specification, and lets you save the password, so no need to remember the password everytime. 
+                            </p>
+                            <a href="#"><i class='bx bx-link-external' ></i></a>
+                        </div>
+                    </div>
+                    <!-- <div class="port-box mix tools">
+                        <div class="port-image">
+                            <img src="assets/image/3.jfif" alt="">
+                        </div>
+                        <div class="port-content">
+                            <h3>Secure Chat Application</h3>
+                            <p>About it About itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout 
+                            </p>
+                            <a href="#"><i class='bx bx-link-external' ></i></a>
+                        </div>
+                    </div>
+                    <div class="port-box mix tools">
+                        <div class="port-image">
+                            <img src="assets/image/4.jfif" alt="">
+                        </div>
+                        <div class="port-content">
+                            <h3>Secure Chat Application</h3>
+                            <p>About it About itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout 
+                            </p>
+                            <a href="#"><i class='bx bx-link-external' ></i></a>
+                        </div>
+                    </div>
+                    <div class="port-box mix tools">
+                        <div class="port-image">
+                            <img src="assets/image/5.jfif" alt="">
+                        </div>
+                        <div class="port-content">
+                            <h3>Secure Chat Application</h3>
+                            <p>About it About itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout 
+                            </p>
+                            <a href="#"><i class='bx bx-link-external' ></i></a>
+                        </div>
+                    </div> -->
+                    <!-- <div class="port-box mix others">
+                        <div class="port-image">
+                            <img src="assets/image/6.jfif" alt="">
+                        </div>
+                        <div class="port-content">
+                            <h3>Secure Chat Application</h3>
+                            <p>About it About itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout itAbout itAbout itAbout itAbout itAbout itAbout it
+                                About itAbout itAbout 
+                            </p>
+                            <a href="#"><i class='bx bx-link-external' ></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+<!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="main-text scroll-scale">
+                <h1><span>Ask Me Question !!</span></h1>
+                <h2>Contact Me</h2>
+            </div>
+
+            <form action="https://formspree.io/f/mrgnzjkl" method="post" class="scroll-bottom">
+                <!-- Add method="post" to send form data securely -->
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="address" placeholder="Your Address">
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <div class="btn-box formBtn">
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+
+<!-- FOOTER SECTION  -->
+        <footer class="footer">
+            <p class="scroll-scale">Copyright &copy; 2023 by Ishwar || All Right Reserved.</p>
+            <a href="#home"><i class='bx bxs-up-arrow-circle'></i></a>
+        </footer>
+
+
+
+
+     
+    <!-- custom js 
+    <script src="js/script1.js"></script> -->
+    <script>
+
+let words = document.querySelectorAll(".word");
+words.forEach((word)=> {
+    let letters = word.textContent.split("");
+    word.textContent="";
+    letters.forEach((letter)=>{
+        let span=document.createElement("span");
+        span.textContent = letter;
+        span.className = "letter";
+        word.append(span);
+    });
+});
+
+let currentWordIndex = 0;
+let maxWordIndex = words.length -1;
+words[currentWordIndex].style.opacity = "1";
+
+let changeTest = ()=> {
+    let currentWord = words[currentWordIndex];
+    let nextWord = currentWordIndex === maxWordIndex ? words[0] : words[currentWordIndex + 1];
+
+    Array.from(currentWord.children).forEach((letter, i)=>{
+        setTimeout(() =>{
+            letter.className = "letter out";
+    },i*80);
+});
+    nextWord.style.opacity="1";
+    Array.from(nextWord.children).forEach((letter,i)=>{
+        letter.className = "letter behind";
+        setTimeout(()=>{
+            letter.className = "letter in";
+        },340+i*80);
+});
+currentWordIndex = currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
+};
+
+changeTest();
+setInterval(changeTest,3000)
+
+// Circle skill 
+const circles = document.querySelectorAll('.circle');
+circles.forEach(elem=>{
+    var dots = elem.getAttribute("data-dots");
+    var marked = elem.getAttribute("data-percent");
+    var percent = Math.floor(dots*marked/100);
+    var points = "";
+    var rotate = 360/dots;
+
+    for(let i=0; i< dots ; i++){
+        points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
+    }
+    elem.innerHTML = points;
+
+    const pointsMarked = elem.querySelectorAll('.points');
+    for (let j = 0; j < percent; j++) {
+        pointsMarked[j].classList.add('marked');
+        
+    }
+});
+
+
+
+
+// Active Menu
+let menuLi = document.querySelectorAll('header ul li a');
+let section = document.querySelectorAll('section');
+
+function activeMenu() {
+    let len = section.length;
+    while(--len && window.scrollY + 97 < section[len].offsetTop){}
+    menuLi.forEach(sec => sec.classList.remove("active"));
+    menuLi[len].classList.add("active");
+}
+
+activeMenu();
+window.addEventListener("scroll" , activeMenu);
+
+// Sticky navbar
+const header = document.querySelector("header");
+window.addEventListener("scroll", function(){
+    header.classList.toggle("sticky", window.scrollY > 50);
+});
+
+// Toggle icon navbar
+let menuIcon = document.querySelector("#menu-icon");
+let navlist = document.querySelector(".navlist");
+
+menuIcon.onclick = ()=>{
+    menuIcon.classList.toggle("bx-x");
+    navlist.classList.toggle("open");
+}
+
+window.onscroll = ()=>{
+    menuIcon.classList.remove("bx-x");
+    navlist.classList.remove("open");
+}
+
+// Parallax
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show-items");
+        }else{
+            entry.target.classList.remove("show-items");
+        }
+    });
+});
+
+const scrollScale = document.querySelectorAll(".scroll-scale");
+scrollScale.forEach((el)=>observer.observe(el));
+
+const scrollBottom = document.querySelectorAll(".scroll-bottom");
+scrollBottom.forEach((el)=>observer.observe(el));
+
+const scrollTop = document.querySelectorAll(".scroll-top");
+scrollTop.forEach((el)=>observer.observe(el));
+
+// READ MORE 
+function toggleContent() {
+    var hiddenContent = document.querySelector('.hidden-content');
+    var buttonText = document.querySelector('.btn');
+
+    if (hiddenContent.style.display === 'none') {
+        hiddenContent.style.display = 'block';
+        buttonText.innerText = 'Read Less';
+    } else {
+        hiddenContent.style.display = 'none';
+        buttonText.innerText = 'Read More';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var buttonContainer = document.getElementById('readMoreButtonContainer');
+    var readMoreButton = document.createElement('a');
+    readMoreButton.href = '#';
+    readMoreButton.classList.add('btn');
+    readMoreButton.innerText = 'Read More';
+    readMoreButton.onclick = toggleContent;
+
+    buttonContainer.appendChild(readMoreButton);
+});
+
+    </script>
+    </body>
+</html>
